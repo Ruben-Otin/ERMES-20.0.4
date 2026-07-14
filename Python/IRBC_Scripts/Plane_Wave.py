@@ -1,5 +1,5 @@
 ###############################################################################
-# - Plane waves boundary conditions for EDG_1st and RME_1st
+# - Plane wave IBC boundary condition for EDG_1st and RME_1st
 ###############################################################################
 
 import numpy as np
