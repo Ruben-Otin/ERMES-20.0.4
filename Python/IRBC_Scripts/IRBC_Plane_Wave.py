@@ -1,5 +1,7 @@
 ###############################################################################
-# - Plane wave IBC boundary condition for EDG_1st and RME_1st
+# - Plane wave Robin boundary condition for EDG_1st and RME_1st elements.
+# - This script generates the files that can be imported into ERMES as a
+#   plane wave Robin boundary condiction.
 ###############################################################################
 
 import numpy as np
