@@ -8,6 +8,8 @@
 #
 # - The calculated stiffness matrices and residual vectors are saved 
 #   in the binary files: "Matrix_P_IRBC.bin" and "Vector_U_IRBC.bin".
+#
+# - This script uses functions defined in IRBC_Utils.py
 ###############################################################################
 
 import IRBC_Utils as iu
