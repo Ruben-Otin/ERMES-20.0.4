@@ -28,7 +28,7 @@ Getting started:
     - "ERMES_CPP_20.0.4" if you plan to work with the C++ source code.
     - "ERMES_20.0.4" to work with the GiD graphical user interface.
     - "Examples" to explore usage examples.
-    - "Utilities" for customizing boundary conditions, solvers, plasmas, and sources.
+    - "Utilities" for customizing boundary conditions, plasmas, sources, and solvers.
 
 3-) Follow the instructions provided in the manual to complete the installation and setup.
 
