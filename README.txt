@@ -17,7 +17,7 @@ the following files and folders:
 - "ERMES_CPP_20.0.4"       : C++ source code.
 - "ERMES_20.0.4"           : GiD user interface.
 - "Examples"               : GiD usage examples.
-- "Python"                 : Examples Python scripts.
+- "Utilities"              : Python tools, solvers, and batch scripts.
 
 Getting started:
 
@@ -28,7 +28,7 @@ Getting started:
     - "ERMES_CPP_20.0.4" if you plan to work with the C++ source code.
     - "ERMES_20.0.4" to work with the GiD graphical user interface.
     - "Examples" to explore usage examples.
-    - "Python" for customizing boundary conditions, plasma profiles, and source terms.
+    - "Utilities" for customizing boundary conditions, solvers, plasmas, and sources.
 
 3-) Follow the instructions provided in the manual to complete the installation and setup.
 
