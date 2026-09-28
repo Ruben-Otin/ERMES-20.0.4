@@ -7,7 +7,7 @@
 *
 * E-mail: ruben.otin@ukaea.uk
 *
-* Oxford (UK) - July 2026
+* Oxford (UK) - September 2026
 **********************************************************************************************
 
 This folder contains all the resources required to get started with ERMES 20.0.4. It includes 
