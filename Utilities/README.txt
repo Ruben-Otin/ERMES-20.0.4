@@ -20,6 +20,7 @@ boundary conditions, element matrices). It includes the following folders:
 - "IRBC_Scripts"      : Generation of plane wave Imported Robin Boundary Conditions (IRBC).
 - "IVEM_Scripts"      : Generation of imported element stiffness matrices (IVEM).
 - "NumPy_Solvers"     : Examples of Python NumPy/SciPy external solvers for ERMES.
+- "PETSc_Direct"      : Parallel C++ PETSc solver that reads the ERMES system files directly.
 - "Plasma_Scripts"    : EQDSK readers, cold plasma files generation and problem automation.
 
 All the scripts are examples intended to be copied and adapted to each specific problem.
@@ -119,7 +120,43 @@ the lower diagonal.
 - "SuperLU.py" : Direct sparse LU solver (SuperLU).
 
 **********************************************************************************************
-6-) "Plasma_Scripts"
+6-) "PETSc_Direct"
+**********************************************************************************************
+
+Direct interface between ERMES and PETSc. The C++ solver "ERMESPETScSolver" reads the ERMES
+linear system in parallel (MPI-IO) directly from the ERMES binary files, solves it with any
+PETSc solver (e.g. MUMPS direct solver or iterative KSP solvers), and writes the solution
+"Vector_Xo.bin" read back by ERMES. No Python and no intermediate files are needed, and no
+MPI process ever holds the whole matrix.
+
+It reads "Matrix_A_cmplx.bin", "Matrix_A_int.bin" and "Vector_B.bin" and, for the Hermitic
+formats, "Matrix_A_aux_cmplx.bin" and "Matrix_A_aux_int.bin". The matrix storage format
+(Symmetric, Full-matrix, Hermitic-Symmetric or Hermitic-Full) is detected automatically and
+printed in the ERMES "*.info" file. Requires PETSc >= 3.19 configured with complex scalars
+and double precision.
+
+- "ERMESPETScSolver.cpp" : Source code of the parallel PETSc solver. Accepts any PETSc option
+                           plus "-ermes_folder <dir>" (folder with the ERMES files) and
+                           "-ermes_monitor_every <n>" (print residual every n iterations).
+
+- "makefile"             : Builds "ERMESPETScSolver" using PETSC_DIR and PETSC_ARCH
+                           (">> make ERMESPETScSolver").
+
+- "ERMES2PETSc.sh"       : Script called by ERMES as external solver on Linux. Solver type,
+                           options, number of MPI processes, optional hybrid MPI+OpenMP and
+                           MPI launcher are set at the top. Inside a SLURM job it uses all the
+                           nodes and tasks of the job. All output and errors go to the ERMES
+                           "*.info" file.
+
+- "win2wsl.sh"           : Runs "ERMES2PETSc.sh" from Windows through WSL2.
+
+- "README.txt"           : Detailed installation and usage instructions, including how to run
+                           the solver from ERMES ("bash /path/to/PETSc_Direct/ERMES2PETSc.sh"
+                           on Linux, "wsl ../PETSc_Direct/win2wsl.sh" on Windows), how to run it
+                           without ERMES, and useful MUMPS options.
+
+**********************************************************************************************
+7-) "Plasma_Scripts"
 **********************************************************************************************
 
 Scripts for tokamak plasma problems (e.g. electron cyclotron waves in MAST-U).
