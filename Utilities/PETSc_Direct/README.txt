@@ -32,17 +32,30 @@ FILES:
 
 INSTALLATION:
 
-1) Install PETSc with complex scalars (see README.txt in "/External_Solvers/PETSc"),
-   e.g. PETSC_ARCH=arch-complex-M1, and set in ".bashrc":
+1) Download PETSc from its git repository to the local folder "/petsc": 
+
+   >> git clone -b release https://gitlab.com/petsc/petsc.git petsc
+
+2) Configure PETSc using the command "./configure" inside the folder "/petsc" (check
+   PETSc manual for configuration parameters definitions). Note that multiple 
+   configurations can be installed on the same machine, for instance:
+
+   >> ./configure PETSC_ARCH=arch-complex-M1 --with-debugging=0 --download-mumps 
+      --download-scalapack --download-parmetis --download-metis --download-ptscotch 
+      --with-64-bit-indices=1 --with-scalar-type=complex --download-mpich 
+      --download-cmake --with-openmp --download-hwloc --with-cc=gcc --with-cxx=g++ 
+      --with-fc=gfortran --download-fblaslapack --download-bison --download-make
+
+3) Set PETSC_DIR and PETSC_ARCH before compiling and run PETSc (console or .bashrc):
 
    >> export PETSC_DIR=$HOME/petsc
    >> export PETSC_ARCH=arch-complex-M1
 
-2) Compile the solver in this folder:
+4) Compile the solver in this folder:
 
    >> make ERMESPETScSolver
    
-3) Give execution permissions to "*.sh" files and "ERMESPETScSolver".
+5) Give execution permissions to "*.sh" files and "ERMESPETScSolver".
 
    >> chmod +x *.sh ERMESPETScSolver
 
