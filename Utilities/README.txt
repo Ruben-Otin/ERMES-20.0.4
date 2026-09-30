@@ -152,9 +152,8 @@ and double precision.
                            also be run directly from a problem folder.
 
 - "README.txt"           : Installation and usage instructions: PETSc download, Linux
-                           modules, environment variables, example of PETSc configuration
-                           (MUMPS, SuperLU_DIST, OpenBLAS, 64-bit indices), compilation, use
-                           from ERMES, solver options and useful MUMPS options.
+                           modules, environment variables, example of PETSc configuration, 
+                           compilation, use from ERMES, and solver options.
 
 **********************************************************************************************
 7-) "Plasma_Scripts"
