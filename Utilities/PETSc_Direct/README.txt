@@ -38,13 +38,33 @@ INSTALLATION:
 2) Set PETSC_DIR, PETSC_ARCH, and LD_LIBRARY_PATH before configure PETSc 
    (they must also be set before compiling and executing the solver):
 
-   >> export PETSC_DIR=$HOME/petsc && export PETSC_ARCH=arch-complex-M1 && export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PETSC_DIR/$PETSC_ARCH/lib
+   >> export PETSC_DIR=$HOME/petsc 
+   >> export PETSC_ARCH=arch-complex-M1 
+   >> export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PETSC_DIR/$PETSC_ARCH/lib
    
 3) Configure PETSc using the command "./configure" inside the folder "/petsc" (check
    PETSc manual for configuration parameters definitions). Note that multiple 
    configurations can be installed on the same machine, for instance:
 
-   >> ./configure PETSC_ARCH=arch-complex-M1 --with-cc=gcc --with-cxx=g++ --with-fc=gfortran --with-debugging=0 --with-scalar-type=complex --with-64-bit-indices=1 --with-openmp --download-mpich --download-hwloc --download-openblas --download-scalapack --download-mumps --download-metis --download-parmetis --download-ptscotch --download-cmake --download-bison --download-make
+   >> ./configure PETSC_ARCH=arch-complex-M1 
+      --with-cc=gcc 
+      --with-cxx=g++ 
+      --with-fc=gfortran 
+      --with-debugging=0 
+      --with-scalar-type=complex 
+      --with-64-bit-indices=1 
+      --with-openmp 
+      --download-mpich 
+      --download-hwloc 
+      --download-openblas 
+      --download-scalapack 
+      --download-mumps 
+      --download-metis 
+      --download-parmetis 
+      --download-ptscotch 
+      --download-cmake 
+      --download-bison 
+      --download-make
 
 4) Set PETSC_DIR, PETSC_ARCH, and LD_LIBRARY_PATH and compile solver on this folder:
 
