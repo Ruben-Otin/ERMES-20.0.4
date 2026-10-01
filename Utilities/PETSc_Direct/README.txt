@@ -38,6 +38,7 @@ INSTALLATION:
 2) Set PETSC_DIR, PETSC_ARCH, and LD_LIBRARY_PATH before configure PETSc 
    (they must also be set before compiling and executing the solver):
 
+   >> unset PETSC_DIR PETSC_ARCH LD_LIBRARY_PATH
    >> export PETSC_DIR=$HOME/petsc
    >> export PETSC_ARCH=arch-complex-M1
    >> export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PETSC_DIR/$PETSC_ARCH/lib
