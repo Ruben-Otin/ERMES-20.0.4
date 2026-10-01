@@ -51,8 +51,8 @@ INSTALLATION:
       --with-fc=gfortran --with-debugging=0 --with-scalar-type=complex 
       --with-64-bit-indices=1 --with-openmp --download-mpich --download-hwloc 
       --download-fblaslapack --download-scalapack --download-mumps 
-      --download-superlu_dist --download-metis --download-parmetis 
-      --download-ptscotch --download-cmake --download-bison --download-make
+      --download-metis --download-parmetis --download-ptscotch --download-cmake 
+      --download-bison --download-make
 
 4) Set PETSC_DIR, PETSC_ARCH, and LD_LIBRARY_PATH and compile solver on this folder:
 
