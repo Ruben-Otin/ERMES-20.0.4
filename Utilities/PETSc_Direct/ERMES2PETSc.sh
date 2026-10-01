@@ -88,8 +88,12 @@ echo "- Processors    : $NumParallTasks x $ThreadsPerRank thread(s)"
 # Remove any old solution, so that a failed run is never taken as valid by ERMES
 rm -f "$FolderPath/Vector_Xo.bin"
 
-# Solve
-"$MpiExec" -n "$NumParallTasks" $PerNodeFlag "$SolverFullPath" \
+# Solve. OMP_NUM_THREADS is also passed explicitly to every MPI process, because under SLURM
+# PETSc's mpiexec does not always forward the environment (the processes would then use all the
+# cores of the node as OpenMP threads, slowing down the factorization)
+OmpFlag=""
+[ "$Launcher" = "petsc" ] && OmpFlag="-genv OMP_NUM_THREADS $ThreadsPerRank"
+"$MpiExec" -n "$NumParallTasks" $PerNodeFlag $OmpFlag "$SolverFullPath" \
     -ermes_folder "$FolderPath" $SolverType $SolverOptions
 Status=$?
 
