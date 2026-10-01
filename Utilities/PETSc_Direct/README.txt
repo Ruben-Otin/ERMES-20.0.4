@@ -52,8 +52,7 @@ INSTALLATION:
       --with-fc=gfortran 
       --with-debugging=0 
       --with-scalar-type=complex 
-      --with-64-bit-indices=1 
-      --with-openmp 
+      --with-64-bit-indices=1
       --download-mpich 
       --download-hwloc 
       --download-openblas 
