@@ -242,7 +242,7 @@ nodes. To overcome these limitations, either:
         --download-mpich --download-hwloc --download-openblas --download-scalapack 
         --download-mumps --download-metis --download-parmetis --download-ptscotch 
         --download-cmake --download-bison --download-make 
-		--with-packages-download-dir=$HOME/petsc-pkgs
+        --with-packages-download-dir=$HOME/petsc-pkgs
 
 An interrupted configure can be restarted with exactly the same options and the 
 same PETSC_ARCH: packages already downloaded and built are reused.
