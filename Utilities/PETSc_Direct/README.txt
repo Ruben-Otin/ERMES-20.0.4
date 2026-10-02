@@ -268,8 +268,8 @@ FILES:
       >> unset I_MPI_PMI_LIBRARY $(compgen -e | grep '^PMIX_')
 
    "solver output exceeded ... lines"
-      The output reached MaxOutputLines (only when a limit is set). Check the first lines of the "*.info" file
-      for the actual error.
+      The output reached MaxOutputLines (only when a limit is set). Check the first 
+      lines of the "*.info" file for the actual error.
 
    MUMPS stops with INFOG(1)=-9
       Not enough MUMPS workspace: add -mat_mumps_icntl_14 50 (or higher) to
