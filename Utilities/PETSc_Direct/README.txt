@@ -226,9 +226,9 @@ FILES:
         --download-cmake --download-bison --download-make 
         --with-packages-download-dir=$HOME/petsc-pkgs | tee pkg-list.txt
 	 
-	 2) Download packages into $HOME/petsc-pkgs:	
+     2) Download packages into $HOME/petsc-pkgs:	
 	 
-	 >> cd $HOME/petsc-pkgs
+     >> cd $HOME/petsc-pkgs
      >> grep "\['" $HOME/petsc-3.26/pkg-list.txt | 
         grep -oE "https?://[^']+\.(tar\.gz|tgz|tar\.bz2|zip)" | 
         awk -F/ '!seen[$3 FS $4]++' | xargs -n1 wget -nc
@@ -260,29 +260,27 @@ FILES:
 = TROUBLESHOOTING
 ====================================================================================
 
-   "Found both env vars PMI_SIZE and PMIX_NAMESPACE" or "PMI_Init returned 14"
-      The cluster's MPI environment is clashing with PETSc's MPICH. ERMES2PETSc.sh
-      fixes this automatically. If it appears when running PETSc by hand, use:
+-) "Found both env vars PMI_SIZE and PMIX_NAMESPACE" or "PMI_Init returned 14":
+    The cluster's MPI environment is clashing with PETSc's MPICH. ERMES2PETSc.sh
+    fixes this automatically. If it appears when running PETSc by hand, use:
+    >> export SLURM_MPI_TYPE=none MPIR_CVAR_PMI_VERSION=1
+    >> unset I_MPI_PMI_LIBRARY $(compgen -e | grep '^PMIX_')
 
-      >> export SLURM_MPI_TYPE=none MPIR_CVAR_PMI_VERSION=1
-      >> unset I_MPI_PMI_LIBRARY $(compgen -e | grep '^PMIX_')
+-) "solver output exceeded ... lines":
+    The output reached MaxOutputLines (only when a limit is set). Check the first 
+    lines of the "*.info" file for the actual error.
 
-   "solver output exceeded ... lines"
-      The output reached MaxOutputLines (only when a limit is set). Check the first 
-      lines of the "*.info" file for the actual error.
+-) "MUMPS stops with INFOG(1)=-9":
+    Not enough MUMPS workspace: add -mat_mumps_icntl_14 50 (or higher) to 
+    SolverOptions.
 
-   MUMPS stops with INFOG(1)=-9
-      Not enough MUMPS workspace: add -mat_mumps_icntl_14 50 (or higher) to
-      SolverOptions.
+-) "Out of memory during the factorization"
+    Use more nodes, set a lower RanksPerNode, or use Cholesky if the matrix format
+    is "Symmetric".
 
-   Out of memory during the factorization
-      Use more nodes, set a lower RanksPerNode, or use Cholesky if the matrix format
-      is "Symmetric".
+-) "Quick MPI test on a cluster (inside an interactive job)":
+    >> cd $PETSC_DIR/src/snes/tutorials && make ex19
+    >> $PETSC_DIR/$PETSC_ARCH/bin/mpiexec -n 4 ./ex19
 
-   Quick MPI test on a cluster (inside an interactive job):
-
-      >> cd $PETSC_DIR/src/snes/tutorials && make ex19
-      >> $PETSC_DIR/$PETSC_ARCH/bin/mpiexec -n 4 ./ex19
-
-   For more information, see the PETSc manual on "/External_Solvers/PETSc" or visit
-   https://petsc.org.
+For more information, see the PETSc manual on "/External_Solvers/PETSc" or visit 
+https://petsc.org.
