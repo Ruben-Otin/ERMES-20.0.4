@@ -24,7 +24,7 @@ boundary conditions, so together they cover the most common ways of driving
 an ERMES simulation.
 
 *******************************************************************************
-* - HOW TO OPEN AND RUN AN EXAMPLE
+1-) How to open and run an example
 *******************************************************************************
 
 1. Install GiD and the ERMES problem type (see the main ERMES documentation).
@@ -44,7 +44,7 @@ Tip: before modifying an example, save a copy with  File > Save as  so the
 original project remains unchanged.
 
 *******************************************************************************
- 2. WHAT TO EXPLORE IN EACH PROJECT
+2-) What to explore in each project
 *******************************************************************************
 
 - Problem data (Data > Problem data):
@@ -68,9 +68,9 @@ original project remains unchanged.
 
 All values are given in SI units (length units: m).
 
--------------------------------------------------------------------------------
- 3. EXAMPLE 1 - Eddy_Currents.gid
--------------------------------------------------------------------------------
+*******************************************************************************
+3-) "Eddy_Currents.gid"
+*******************************************************************************
 
 - Description:
     A conducting plate with a square hole and a coil placed above it,
@@ -104,9 +104,9 @@ All values are given in SI units (length units: m).
       depth and the distribution of the induced currents.
     - Switch Potentials to Off to compare with the E-field formulation.
 
--------------------------------------------------------------------------------
- 4. EXAMPLE 2 - Microwave_Filter.gid
--------------------------------------------------------------------------------
+*******************************************************************************
+4-) "Microwave_Filter.gid"
+*******************************************************************************
 
 - Description
     A WR-90 rectangular waveguide (22.86 mm x 10.16 mm cross-section,
@@ -145,9 +145,9 @@ All values are given in SI units (length units: m).
       over a frequency band.
     - Excite the structure from port 2 instead of port 1.
 
--------------------------------------------------------------------------------
- 5. EXAMPLE 3 - SAM-Head.gid
--------------------------------------------------------------------------------
+*******************************************************************************
+5-) "SAM-Head.gid"
+*******************************************************************************
 
 - Description:
     A SAM (Specific Anthropomorphic Mannequin) head phantom, modelled as a
@@ -190,9 +190,9 @@ All values are given in SI units (length units: m).
     - Modify the tissue properties or the frequency and compare the
       absorbed power given by the volume integral.
 
--------------------------------------------------------------------------------
- 6. NOTES
--------------------------------------------------------------------------------
+*******************************************************************************
+ 6-) Notes
+*******************************************************************************
 
 - Mesh density: the element size must resolve the wavelength in every
   material (and the skin depth in conductors). If you increase the
