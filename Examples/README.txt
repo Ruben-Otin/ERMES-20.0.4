@@ -1,6 +1,6 @@
-**********************************************************************************************
+*******************************************************************************
 * ERMES 20.0.4 - Examples
-**********************************************************************************************
+*******************************************************************************
 * Ruben Otin
 *
 * United Kingdom Atomic Energy Authority (UKAEA)
@@ -8,7 +8,7 @@
 * E-mail: ruben.otin@ukaea.uk
 *
 * Oxford (UK) - September 2026
-**********************************************************************************************
+*******************************************************************************
 
 This folder contains three ready-to-open GiD projects that show how a
 complete ERMES problem is set up: problem data, materials, boundary
@@ -23,9 +23,9 @@ Each example uses a different FEM formulation, excitation and set of
 boundary conditions, so together they cover the most common ways of driving
 an ERMES simulation.
 
--------------------------------------------------------------------------------
- 1. HOW TO OPEN AND RUN AN EXAMPLE
--------------------------------------------------------------------------------
+*******************************************************************************
+* - HOW TO OPEN AND RUN AN EXAMPLE
+*******************************************************************************
 
 1. Install GiD and the ERMES problem type (see the main ERMES documentation).
 2. In GiD go to  File > Open  and select one of the *.gid folders.
@@ -43,9 +43,9 @@ an ERMES simulation.
 Tip: before modifying an example, save a copy with  File > Save as  so the
 original project remains unchanged.
 
--------------------------------------------------------------------------------
+*******************************************************************************
  2. WHAT TO EXPLORE IN EACH PROJECT
--------------------------------------------------------------------------------
+*******************************************************************************
 
 - Problem data (Data > Problem data):
     Problem mode, symmetry, FEM formulation (element type, A-V potentials
