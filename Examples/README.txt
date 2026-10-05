@@ -1,7 +1,14 @@
-===============================================================================
- ERMES 20.0.4 - EXAMPLES
- https://github.com/Ruben-Otin/ERMES-20.0.4
-===============================================================================
+**********************************************************************************************
+* ERMES 20.0.4 - Examples
+**********************************************************************************************
+* Ruben Otin
+*
+* United Kingdom Atomic Energy Authority (UKAEA)
+*
+* E-mail: ruben.otin@ukaea.uk
+*
+* Oxford (UK) - September 2026
+**********************************************************************************************
 
 This folder contains three ready-to-open GiD projects that show how a
 complete ERMES problem is set up: problem data, materials, boundary
