@@ -191,7 +191,7 @@ All values are given in SI units (length units: m).
       absorbed power given by the volume integral.
 
 *******************************************************************************
- 6-) Notes
+6-) Notes
 *******************************************************************************
 
 - Mesh density: the element size must resolve the wavelength in every
