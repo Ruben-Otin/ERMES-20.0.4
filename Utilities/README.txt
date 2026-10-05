@@ -1,6 +1,6 @@
-**********************************************************************************************
+***************************************************************************************************
 * ERMES 20.0.4 - Utilities
-**********************************************************************************************
+***************************************************************************************************
 * Ruben Otin
 *
 * United Kingdom Atomic Energy Authority (UKAEA)
@@ -8,7 +8,7 @@
 * E-mail: ruben.otin@ukaea.uk
 *
 * Oxford (UK) - September 2026
-**********************************************************************************************
+***************************************************************************************************
 
 This folder contains auxiliary scripts that complement ERMES 20.0.4. They help to automate
 simulations on Linux and HPC clusters, solve the ERMES matrices with external solvers, and
@@ -28,41 +28,41 @@ Paths, file names, problem names and physical parameters are defined at the begi
 each script and must be edited before use. Python scripts require Python 3 with NumPy and
 SciPy (and Matplotlib for "eqdsk_reader.py").
 
-**********************************************************************************************
+***************************************************************************************************
 1-) "Batch_Scripts"
-**********************************************************************************************
+***************************************************************************************************
 
 Examples of shell scripts for running ERMES without the GiD graphical interface on Linux
 workstations and HPC clusters.
 
-- "ERMES_batch.sh"     : Runs the ERMES executable on an existing GiD problem and then calls
-                         a Python script (ERMES2PETSc.py) to solve the system with PETSc.
+- "ERMES_batch.sh"    : Runs the ERMES executable on an existing GiD problem and then calls
+                        a Python script (ERMES2PETSc.py) to solve the system with PETSc.
 
-- "GiD_batch.sh"       : Full workflow with GiD offscreen: meshes the problem, computes the
-                         static currents, stores them in a "Currents" folder, computes the
-                         fields, and solves with an external solver. It calls GiD batch
-                         (.bch) macro files (Mesh.bch, Calculate_J.bch, Calculate_E.bch).
+- "GiD_batch.sh"      : Full workflow with GiD offscreen: meshes the problem, computes the
+                        static currents, stores them in a "Currents" folder, computes the
+                        fields, and solves with an external solver. It calls GiD batch
+                        (.bch) macro files (Mesh.bch, Calculate_J.bch, Calculate_E.bch).
 
-- "GiD_offscreen.bch"  : Example of a GiD batch file. It creates a geometry, loads the ERMES
-                         problemtype, defines Gaussian beam Robin coefficients and a cold
-                         plasma material, sets the problem data (external PETSc solver),
-                         assigns boundary conditions, meshes, and writes the calculation
-                         file. Can also be run in GiD with "Import -> Batch file..." (Ctrl-b).
+- "GiD_offscreen.bch" : Example of a GiD batch file. It creates a geometry, loads the ERMES
+                        problemtype, defines Gaussian beam Robin coefficients and a cold
+                        plasma material, sets the problem data (external PETSc solver),
+                        assigns boundary conditions, meshes, and writes the calculation
+                        file. Can also be run in GiD with "Import -> Batch file..." (Ctrl-b).
 
-- "Linux_modules.sh"   : Example of Linux module configuration (gcc, cmake, python) for
-                         ERMES. Adapt it to the modules available in your system.
+- "Linux_modules.sh"  : Example of Linux module configuration (gcc, cmake, python) for
+                        ERMES. Adapt it to the modules available in your system.
 
-- "PETSc_batch.sh"     : Example of a parallel PETSc solver call with petscmpiexec, including
-                         solver options (e.g. MUMPS direct solver) and monitoring options.
+- "PETSc_batch.sh"    : Example of a parallel PETSc solver call with petscmpiexec, including
+                        solver options (e.g. MUMPS direct solver) and monitoring options.
 
-- "SLURM_batch.sh"     : Example of SLURM job script for HPC clusters. It sets the PETSc
-                         environment and runs ERMES in loops over several frequencies,
-                         overwriting the ERMES input .dat files and collecting the results
-                         into separate folders.
+- "SLURM_batch.sh"    : Example of SLURM job script for HPC clusters. It sets the PETSc
+                        environment and runs ERMES in loops over several frequencies,
+                        overwriting the ERMES input .dat files and collecting the results
+                        into separate folders.
 
-**********************************************************************************************
+***************************************************************************************************
 2-) "Current_J_Scripts"
-**********************************************************************************************
+***************************************************************************************************
 
 Scripts that read an EQDSK plasma equilibrium file and compute the plasma current density
 from the equilibrium profiles (p' and FF'). The result is written as an imported J source
@@ -77,9 +77,9 @@ the ERMES mesh files of the problem (nodes "*-1.dat" and volume elements "*-4.da
 Note: by default these scripts read the EQDSK sample file from "./EQDSK_Samples/". Copy that
 folder from "Plasma_Scripts" or edit the "EQDSK_File" path.
 
-**********************************************************************************************
+***************************************************************************************************
 3-) "IRBC_Scripts"
-**********************************************************************************************
+***************************************************************************************************
 
 - "IRBC_Plane_Wave_v2.py" : Generates a plane wave Imported Robin Boundary Condition for
                             EDG_1st and RME_1st elements. The user defines the frequency,
@@ -89,9 +89,9 @@ folder from "Plasma_Scripts" or edit the "EQDSK_File" path.
                             problem and writes the binary files "Vector_U_IRBC.bin" and
                             "Matrix_P_IRBC.bin" to be imported by ERMES.
 
-**********************************************************************************************
+***************************************************************************************************
 4-) "IVEM_Scripts"
-**********************************************************************************************
+***************************************************************************************************
 
 - "IVEM_K_Matrix.py" : Computes the element stiffness matrix of each tetrahedral element for
                        the RME_1st element type, given the material properties (frequency,
@@ -103,9 +103,9 @@ folder from "Plasma_Scripts" or edit the "EQDSK_File" path.
                        tetrahedron shape function derivatives and volume, RME_1st element
                        matrix).
 
-**********************************************************************************************
+***************************************************************************************************
 5-) "NumPy_Solvers"
-**********************************************************************************************
+***************************************************************************************************
 
 Examples of Python scripts used as external solvers of ERMES. They read the matrix and
 vector written by ERMES ("Matrix_A_cmplx.bin", "Matrix_A_int.bin", "Vector_B.bin"), solve
@@ -119,9 +119,9 @@ the lower diagonal.
 - "BiCG.py"    : Iterative BiConjugate Gradient solver with diagonal preconditioner.
 - "SuperLU.py" : Direct sparse LU solver (SuperLU).
 
-**********************************************************************************************
+***************************************************************************************************
 6-) "PETSc_Direct"
-**********************************************************************************************
+***************************************************************************************************
 
 Direct interface between ERMES and PETSc. The C++ solver "ERMESPETScSolver" reads the ERMES
 linear system in parallel (MPI-IO) directly from the ERMES binary files, solves it with any
@@ -155,9 +155,9 @@ and double precision.
                            modules, environment variables, example of PETSc configuration, 
                            compilation, use from ERMES, and solver options.
 
-**********************************************************************************************
+***************************************************************************************************
 7-) "Plasma_Scripts"
-**********************************************************************************************
+***************************************************************************************************
 
 Scripts for tokamak plasma problems (e.g. electron cyclotron waves in MAST-U).
 
@@ -185,12 +185,12 @@ Scripts for tokamak plasma problems (e.g. electron cyclotron waves in MAST-U).
                                   polarization, equilibrium file readers, plasma files).
 
 - "EQDSK_Samples"               : Sample input data for the scripts above:
-                                  - "mast-u-sample.eqdsk" : MAST-U EQDSK equilibrium file.
-                                  - "rho_ne.txt"          : Normalized electron density profile.
-                                  - "rho_te.txt"          : Normalized electron temperature profile.
-                                  - "rho_flux.txt"        : Normalized flux coordinate.
+                                  - "mast-u-sample.eqdsk" : MAST-U EQDSK equilibrium file
+                                  - "rho_ne.txt"          : Normalized electron density profile
+                                  - "rho_te.txt"          : Normalized electron temperature profile
+                                  - "rho_flux.txt"        : Normalized flux coordinate
 
-**********************************************************************************************
+***************************************************************************************************
 
 See "ERMES_20.0.4_Manual.pdf" for a description of the ERMES input/output files, imported
 conditions, external solvers and batch execution used by these scripts.
