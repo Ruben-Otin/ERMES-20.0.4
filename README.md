@@ -479,8 +479,8 @@ flowchart LR
     <td align="center" width="50%"><img src="images/ITER-Quench-Voltage.png" height="240"/><br/><sub>Voltage induced by a quench in an ITER superconducting poloidal coil</sub></td>
   </tr>
   <tr>
-    <td align="center" width="50%"><img src="images/SAMHead.png" height="240"/><br/><sub>Gaussian beams E field on a SAM head phantom</sub></td>
-    <td align="center" width="50%"><img src="images/BWShield.png" height="240"/><br/><sub>Radiation leaking from a curved coaxial cable braided shield</sub></td>
+    <td align="center" width="50%"><img src="images/SAMHead.png" height="440"/><br/><sub>Gaussian beams E field on a SAM head phantom</sub></td>
+    <td align="center" width="50%"><img src="images/BWShield.png" height="440"/><br/><sub>Radiation leaking from a curved coaxial cable braided shield</sub></td>
   </tr>
 </table>
 
