@@ -448,7 +448,7 @@ flowchart LR
 
 <table>
   <tr>
-    <td align="center" width="50%"><img src="images/GaussianBeam.png" width="100%"/><br/><sub>Gaussian beam — E field and Poynting vector</sub></td>
+    <td align="center" width="30%"><img src="images/GaussianBeam.png" width="100%"/><br/><sub>Gaussian beam — E field and Poynting vector</sub></td>
     <td align="center" width="50%"><img src="images/JET-A2-E-3D.png" width="100%"/><br/><sub>Electric field of the JET A2 antenna in cold plasma</sub></td>
   </tr>
   <tr>
@@ -460,7 +460,7 @@ flowchart LR
     <td align="center"><img src="images/ITER-Quench-Voltage.png" width="100%"/><br/><sub>Voltage induced by a quench in an ITER superconducting poloidal coil</sub></td>
   </tr>
   <tr>
-    <td align="center"><img src="images/SAMHead.png" width="100%"/><br/><sub>Gaussian beams on a SAM head phantom</sub></td>
+    <td align="center"><img src="images/SAMHead.png" width="30%"/><br/><sub>Gaussian beams on a SAM head phantom</sub></td>
     <td align="center"><img src="images/BWShield.png" width="100%"/><br/><sub>Radiation leaking from a curved coaxial cable braided shield</sub></td>
   </tr>
 </table>
