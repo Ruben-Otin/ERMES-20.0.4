@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./Manual/Contents/Figures/ERMESLogo.png" alt="ERMES logo" width="320"/>
+<img src="images/ERMESLogo.png" alt="ERMES logo" width="320"/>
 
 # ERMES 20.0.4
 
@@ -15,7 +15,7 @@
 ![GUI](https://img.shields.io/badge/GUI-GiD-orange)
 ![Solvers](https://img.shields.io/badge/solvers-PETSc%20%7C%20NumPy-8A2BE2)
 
-<img src="Manual/Contents/Figures/UKAEA-Logo-B.png" alt="UKAEA" height="60"/>
+<img src="images/UKAEA-Logo-B.png" alt="UKAEA" height="60"/>
 
 [Overview](#-overview) •
 [Features](#-features) •
@@ -450,20 +450,20 @@ flowchart LR
 
 <table>
   <tr>
-    <td align="center" width="50%"><img src="Manual/Contents/Figures/GaussBeamEzS-CP.png" width="100%"/><br/><sub>20 GHz Gaussian beam in cold plasma — E field and Poynting vector</sub></td>
-    <td align="center" width="50%"><img src="Manual/Contents/Figures/JET-A2-E-3D.png" width="100%"/><br/><sub>Electric field of the JET A2 antenna in cold plasma</sub></td>
+    <td align="center" width="50%"><img src="images/GaussBeamEzS-CP.png" width="100%"/><br/><sub>20 GHz Gaussian beam in cold plasma — E field and Poynting vector</sub></td>
+    <td align="center" width="50%"><img src="images/JET-A2-E-3D.png" width="100%"/><br/><sub>Electric field of the JET A2 antenna in cold plasma</sub></td>
   </tr>
   <tr>
-    <td align="center"><img src="Manual/Contents/Figures/Disruption-ITER.png" width="100%"/><br/><sub>Eddy currents induced on ITER walls by a plasma disruption</sub></td>
-    <td align="center"><img src="Manual/Contents/Figures/STEP-EddyCurrents.png" width="100%"/><br/><sub>Eddy currents on STEP components from plasma and control coils</sub></td>
+    <td align="center"><img src="images/Disruption-ITER.png" width="100%"/><br/><sub>Eddy currents induced on ITER walls by a plasma disruption</sub></td>
+    <td align="center"><img src="images/STEP-EddyCurrents.png" width="100%"/><br/><sub>Eddy currents on STEP components from plasma and control coils</sub></td>
   </tr>
   <tr>
-    <td align="center"><img src="Manual/Contents/Figures/ITER-Arc-J.png" width="100%"/><br/><sub>Currents following an electric arc strike on ITER components</sub></td>
-    <td align="center"><img src="Manual/Contents/Figures/ITER-Quench-Voltage.png" width="100%"/><br/><sub>Voltage induced by a quench in an ITER superconducting poloidal coil</sub></td>
+    <td align="center"><img src="images/ITER-Arc-J.png" width="100%"/><br/><sub>Currents following an electric arc strike on ITER components</sub></td>
+    <td align="center"><img src="images/ITER-Quench-Voltage.png" width="100%"/><br/><sub>Voltage induced by a quench in an ITER superconducting poloidal coil</sub></td>
   </tr>
   <tr>
-    <td align="center"><img src="Manual/Contents/Figures/Head-Gaussian.png" width="100%"/><br/><sub>Gaussian beams on a SAM head phantom</sub></td>
-    <td align="center"><img src="Manual/Contents/Figures/BWShield.png" width="100%"/><br/><sub>Radiation leaking from a curved coaxial cable braided shield</sub></td>
+    <td align="center"><img src="images/Head-Gaussian.png" width="100%"/><br/><sub>Gaussian beams on a SAM head phantom</sub></td>
+    <td align="center"><img src="images/BWShield.png" width="100%"/><br/><sub>Radiation leaking from a curved coaxial cable braided shield</sub></td>
   </tr>
 </table>
 
