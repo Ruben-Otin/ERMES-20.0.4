@@ -13,11 +13,11 @@
 This folder contains all the resources required to get started with ERMES 20.0.4. 
 It includes the following files and folders:
 
-- "ERMES_20.0.4_Manual.pdf": User manual.
-- "ERMES_CPP_20.0.4"       : C++ source code.
-- "ERMES_20.0.4"           : GiD user interface.
-- "Examples"               : GiD usage examples.
-- "Utilities"              : Python tools, solvers, and batch scripts.
+- "ERMES_20.0.4_Manual.pdf" : User manual.
+- "ERMES_CPP_20.0.4"        : C++ source code.
+- "ERMES_20.0.4"            : GiD user interface.
+- "Examples"                : GiD usage examples.
+- "Utilities"               : Python tools, solvers, and batch scripts.
 
 Getting started:
 
