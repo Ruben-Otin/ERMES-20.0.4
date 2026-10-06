@@ -448,31 +448,12 @@ flowchart LR
 
 <table>
   <tr>
-    <td align="center" width="50%"><img src="images/GaussianBeam.png" width="70%"/><br/><sub>Gaussian beam — E field and Poynting vector</sub></td>
-    <td align="center" width="50%"><img src="images/JET-A2-E-3D.png" width="100%"/><br/><sub>Electric field of the JET A2 antenna in cold plasma</sub></td>
-  </tr>
-  <tr>
-    <td align="center" width="50%"><img src="images/Disruption-ITER.png" width="100%"/><br/><sub>Eddy currents induced on ITER walls by a plasma disruption</sub></td>
-    <td align="center" width="50%"><img src="images/STEP-EddyCurrents.png" width="90%"/><br/><sub>Eddy currents on STEP components from plasma and control coils</sub></td>
-  </tr>
-  <tr>
-    <td align="center" width="50%"><img src="images/ITER-Arc-J.png" width="100%"/><br/><sub>Currents following an electric arc strike on ITER components</sub></td>
-    <td align="center" width="50%"><img src="images/ITER-Quench-Voltage.png" width="100%"/><br/><sub>Voltage induced by a quench in an ITER superconducting poloidal coil</sub></td>
-  </tr>
-  <tr>
-    <td align="center" width="50%"><img src="images/SAMHead.png" width="100%"/><br/><sub>Gaussian beams E field on a SAM head phantom</sub></td>
-    <td align="center" width="50%"><img src="images/BWShield.png" width="100%"/><br/><sub>Radiation leaking from a curved coaxial cable braided shield</sub></td>
-  </tr>
-</table>
-
-<table>
-  <tr>
     <td align="center" width="50%"><img src="images/GaussianBeam.png" height="240"/><br/><sub>Gaussian beam — E field and Poynting vector</sub></td>
     <td align="center" width="50%"><img src="images/JET-A2-E-3D.png" height="240"/><br/><sub>Electric field of the JET A2 antenna in cold plasma</sub></td>
   </tr>
   <tr>
-    <td align="center" width="50%"><img src="images/Disruption-ITER.png" height="240"/><br/><sub>Eddy currents induced on ITER walls by a plasma disruption</sub></td>
-    <td align="center" width="50%"><img src="images/STEP-EddyCurrents.png" height="240"/><br/><sub>Eddy currents on STEP components from plasma and control coils</sub></td>
+    <td align="center" width="50%"><img src="images/Disruption-ITER.png" height="340"/><br/><sub>Eddy currents induced on ITER walls by a plasma disruption</sub></td>
+    <td align="center" width="50%"><img src="images/STEP-EddyCurrents.png" height="340"/><br/><sub>Eddy currents on STEP components from plasma and control coils</sub></td>
   </tr>
   <tr>
     <td align="center" width="50%"><img src="images/ITER-Arc-J.png" height="240"/><br/><sub>Currents following an electric arc strike on ITER components</sub></td>
