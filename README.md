@@ -15,8 +15,6 @@
 ![GUI](https://img.shields.io/badge/GUI-GiD-orange)
 ![Solvers](https://img.shields.io/badge/solvers-PETSc%20%7C%20NumPy-8A2BE2)
 
-<img src="images/UKAEA-Logo-B.png" alt="UKAEA" height="60"/>
-
 [Overview](#-overview) •
 [Features](#-features) •
 [Package contents](#-package-contents) •
