@@ -448,7 +448,7 @@ flowchart LR
 
 <table>
   <tr>
-    <td align="center" width="50%"><img src="images/GaussianBeam.png" width="100%"/><br/><sub>Gaussian beam — E field and Poynting vector</sub></td>
+    <td align="center" width="50%"><img src="images/GaussianBeam.png" width="50%"/><br/><sub>Gaussian beam — E field and Poynting vector</sub></td>
     <td align="center" width="50%"><img src="images/JET-A2-E-3D.png" width="100%"/><br/><sub>Electric field of the JET A2 antenna in cold plasma</sub></td>
   </tr>
   <tr>
