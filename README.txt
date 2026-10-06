@@ -1,4 +1,4 @@
-![-](ERMES_20.0.4/Documents/Manual/Contents/Figures/ERMESLogo.png)
+![logo](ERMES_20.0.4/Documents/Manual/Contents/Figures/ERMESLogo.png)
 
 **********************************************************************************************
 * ERMES 20.0.4 
