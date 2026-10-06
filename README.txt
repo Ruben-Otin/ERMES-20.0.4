@@ -30,7 +30,7 @@ Getting started:
     - "ERMES_20.0.4"     : to work with the GiD graphical user interface.
     - "Examples"         : to explore usage examples.
     - "Utilities"        : for customizing boundary conditions, plasmas, 
-	                       sources, and solvers.
+                           sources, and solvers.
 
 3-) Follow the instructions provided in the manual to complete the installation and 
     setup.
