@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="Manual/Contents/Figures/ERMESLogo.png" alt="ERMES logo" width="320"/>
+<img src="./Manual/Contents/Figures/ERMESLogo.png" alt="ERMES logo" width="320"/>
 
 # ERMES 20.0.4
 
