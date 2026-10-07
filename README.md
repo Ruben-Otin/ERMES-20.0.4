@@ -299,7 +299,7 @@ The full user manual, `ERMES_20.0.4_Manual.pdf`, covers:
 
 1. **Introduction** — user interface, C++ source code, license
 2. **Installation** — GiD, ERMES, PETSc
-3. **Pre-process** — geometry, materials, sources, boundary conditions, problem settings, output selection, meshing, input files, batch scripts, external solvers
+3. **Pre-process** — geometry, materials, sources, boundary conditions, and problem settings
 4. **Post-process** — output files and GiD visualisation
 5. **Appendix A** — electromagnetic theory
 6. **Appendix B** — finite element formulations
