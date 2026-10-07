@@ -15,19 +15,21 @@
 ![GUI](https://img.shields.io/badge/GUI-GiD-orange)
 ![Solvers](https://img.shields.io/badge/solvers-PETSc%20%7C%20NumPy-8A2BE2)
 
-[Overview](#-overview) •
-[Features](#-features) •
-[Package contents](#-package-contents) •
+[Overview](#overview) •
+[Features](#features) •
+[Package contents](#package-contents) •
 [Installation](#installation) •
-[PETSc](#-ermespetsc-interface) •
-[Workflow](#-workflow) •
+[PETSc](#petsc) •
+[Workflow](#workflow) •
 [Gallery](#gallery) •
-[Citation](#-citation) •
-[Contact](#-contact)
+[Citation](#citation) •
+[Contact](#contact)
 
 </div>
 
 ---
+
+<a id="overview"></a>
 
 ## 🔭 Overview
 
@@ -38,6 +40,8 @@ ERMES works across the **static, quasi-static and high-frequency** regimes. It h
 The graphical user interface is fully integrated into the pre/post-processor **[GiD](https://www.gidsimulation.com)**, which handles geometry, data input, meshing, and visualisation. GiD is the recommended option for setting up simulations and post-processing results, but it is not required. Any pre-processor can be used, provided that it generates the ERMES input files in the format described in the manual.
 
 ---
+
+<a id="features"></a>
 
 ## ✨ Features
 
@@ -75,6 +79,8 @@ Having several formulations lets you pick the most stable one for each problem a
 - Editable `.dat` input files and batch/Python scripts for parametric and cluster runs
 
 ---
+
+<a id="package-contents"></a>
 
 ## 📦 Package contents
 
@@ -125,9 +131,11 @@ Download the latest GiD from [gidsimulation.com](https://www.gidsimulation.com),
 Copy the entire `ERMES_20.0.4` folder into GiD's `problemtypes` directory (e.g. C:\MySoftware\GiD 16.0.2\problemtypes). Then, restart GiD and select **Data → Problem type → ERMES_20.0.4 → ERMES**. The ERMES logo and menu bar should appear. The same procedure applies to Windows and Linux.
 
 ### 3. Install PETSc
-For high-performance computing and large problems, use the ERMES–PETSc interface in `Utilities/PETSc_Direct`. See installation details in **[ERMES–PETSc interface](#-ermespetsc-interface)** below.
+For high-performance computing and large problems, use the ERMES–PETSc interface in `Utilities/PETSc_Direct`. See installation details in **[ERMES–PETSc interface](#petsc)** below.
 
 ---
+
+<a id="petsc"></a>
 
 ## ⚡ ERMES–PETSc interface
 
@@ -212,6 +220,8 @@ For more information, see README.txt in `Utilities/PETSc_Direct` or visit [petsc
 
 ---
 
+<a id="workflow"></a>
+
 ## 🔁 Workflow
 
 
@@ -290,6 +300,8 @@ benchmark problem 7</sub>
 
 ---
 
+<a id="documentation"></a>
+
 ## 📘 Documentation
 
 The full user manual, `ERMES_20.0.4_Manual.pdf`, covers:
@@ -302,6 +314,8 @@ The full user manual, `ERMES_20.0.4_Manual.pdf`, covers:
 6. **Appendix B** — finite element formulations
 
 ---
+
+<a id="citation"></a>
 
 ## 📝 Citation
 
@@ -362,6 +376,8 @@ POSSIBILITY OF SUCH DAMAGE.
 </details>
 
 ---
+
+<a id="contact"></a>
 
 ## 📬 Contact
 
