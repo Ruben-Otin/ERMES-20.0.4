@@ -292,8 +292,8 @@ GiD is recommended but not required. Any pre-processor can be used as long as it
 </p>
 
 <p align="center">
-  <img src="Images/BWShield.png"/><br/>
-  <sub>Fields leaking from a curved coaxial cable braided shield</sub>
+  <img src="Images/BWShield-2.png"/><br/>
+  <sub>Fields leaking from a coaxial cable braided shield</sub>
 </p>
 
 <p align="center">
