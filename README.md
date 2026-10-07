@@ -242,8 +242,7 @@ flowchart TB
     SOLVE -----> POST
 ```
 
-> [NOTE]
-> GiD is recommended but not required. Any pre-processor can be used as long as it writes the `.dat` input files in the format defined by the `.bas` templates in `ERMES_20.0.4/ERMES.gid`. Those `.dat` files can also be edited directly for parametric batch runs.
+GiD is recommended but not required. Any pre-processor can be used as long as it writes the `.dat` input files in the format defined by the `.bas` templates in `ERMES_20.0.4/ERMES.gid`. Those `.dat` files can also be edited directly for parametric batch runs.
 
 ---
 
