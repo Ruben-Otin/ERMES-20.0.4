@@ -120,16 +120,10 @@ Download only what you need:
 Download the latest GiD from [gidsimulation.com](https://www.gidsimulation.com), then register it via **Help → Register GiD** (local, USB, floating or named-user licence; a one-month free licence is available and renewable).
 
 ### 2. Install ERMES
-Copy the entire `ERMES_20.0.4` folder into GiD's `problemtypes` directory — the same on Windows and Linux:
-
-```
-C:\MySoftware\GiD 16.0.2\problemtypes\ERMES_20.0.4
-```
-
-Restart GiD and select **Data → Problem type → ERMES_20.0.4 → ERMES**. The ERMES logo and menu bar should appear.
+Copy the entire `ERMES_20.0.4` folder into GiD's `problemtypes` directory (e.g. C:\MySoftware\GiD 16.0.2\problemtypes). Then, restart GiD and select **Data → Problem type → ERMES_20.0.4 → ERMES**. The ERMES logo and menu bar should appear. The same procedure applies to Windows and Linux.
 
 ### 3. Install PETSc
-For high-performance computing and large problems, use the ERMES–PETSc interface in `Utilities/PETSc_Direct`. See the details in **[ERMES–PETSc interface](#-ermespetsc-interface)** below.
+For high-performance computing and large problems, use the ERMES–PETSc interface in `Utilities/PETSc_Direct`. See installation details in **[ERMES–PETSc interface](#-ermespetsc-interface)** below.
 
 ---
 
@@ -309,7 +303,7 @@ The full user manual, `ERMES_20.0.4_Manual.pdf`, covers:
 
 Publications resulting from the use of ERMES **must cite**:
 
-> R. Otin, "ERMES 20.0: Open-source finite element tool for computational electromagnetics in the frequency domain", *Computer Physics Communications*, Vol. 310, 109521, 2025.
+R. Otin, "ERMES 20.0: Open-source finite element tool for computational electromagnetics in the frequency domain", *Computer Physics Communications*, Vol. 310, 109521, 2025.
 
 ```bibtex
 @article{Otin2025ERMES,
