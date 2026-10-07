@@ -8,7 +8,7 @@
 
 *Open-source finite element tool for computational electromagnetics in the frequency domain*
 
-[![License: BSD-2-Clause](https://img.shields.io/badge/License-BSD_2--Clause-blue.svg)](#-license)
+[![License: BSD-2-Clause](https://img.shields.io/badge/License-BSD_2--Clause-blue.svg)](#license)
 ![Version](https://img.shields.io/badge/version-20.0.4-brightgreen)
 ![Platforms](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey)
 ![Language](https://img.shields.io/badge/C%2B%2B-source-00599C?logo=cplusplus&logoColor=white)
@@ -18,10 +18,10 @@
 [Overview](#-overview) •
 [Features](#-features) •
 [Package contents](#-package-contents) •
-[Installation](#-installation) •
+[Installation](#installation) •
 [PETSc](#-ermespetsc-interface) •
 [Workflow](#-workflow) •
-[Gallery](#-gallery) •
+[Gallery](#gallery) •
 [Citation](#-citation) •
 [Contact](#-contact)
 
@@ -113,6 +113,8 @@ Download only what you need:
 </details>
 
 ---
+
+<a id="installation"></a>
 
 ## 🛠️ Installation
 
@@ -240,6 +242,8 @@ GiD is recommended but not required. Any pre-processor can be used as long as it
 
 ---
 
+<a id="gallery"></a>
+
 ## 🖼️ Gallery
 
 <p align="center">
@@ -318,6 +322,8 @@ R. Otin, "ERMES 20.0: Open-source finite element tool for computational electrom
 ```
 
 ---
+
+<a id="license"></a>
 
 ## ⚖️ License
 
