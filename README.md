@@ -291,10 +291,14 @@ GiD is recommended but not required. Any pre-processor can be used as long as it
   <sub>Voltage induced by a quench in a superconducting poloidal coil of ITER</sub>
 </p>
 
-
 <p align="center">
   <img src="Images/BWShield.png"/><br/>
   <sub>Fields leaking from a curved coaxial cable braided shield</sub>
+</p>
+
+<p align="center">
+  <img src="Images/BioEM.png"/><br/>
+  <sub>Electric field exposure simulation (EU NextGEM project)</sub>
 </p>
 
 ---
