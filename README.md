@@ -119,7 +119,7 @@ Download only what you need:
 ### 1. Install GiD
 Download the latest GiD from [gidsimulation.com](https://www.gidsimulation.com), then register it via **Help → Register GiD** (local, USB, floating or named-user licence; a one-month free licence is available and renewable).
 
-### 2. Install the ERMES problemtype
+### 2. Install ERMES
 Copy the entire `ERMES_20.0.4` folder into GiD's `problemtypes` directory — the same on Windows and Linux:
 
 ```
@@ -128,8 +128,8 @@ C:\MySoftware\GiD 16.0.2\problemtypes\ERMES_20.0.4
 
 Restart GiD and select **Data → Problem type → ERMES_20.0.4 → ERMES**. The ERMES logo and menu bar should appear.
 
-### 3. Install the ERMES–PETSc direct solver
-For large problems, use the PETSc interface in `Utilities/PETSc_Direct` — see **[ERMES–PETSc direct interface](#-ermespetsc-direct-interface)** below.
+### 3. Install PETSc
+For high-performance computing and large problems, use the ERMES–PETSc interface in `Utilities/PETSc_Direct`. See the details in **[ERMES–PETSc interface](#-ermespetsc-interface)** below.
 
 ---
 
@@ -373,5 +373,5 @@ POSSIBILITY OF SUCH DAMAGE.
 - 🌐 [ruben-otin.blogspot.com](https://ruben-otin.blogspot.com)
 
 <div align="center">
-<sub>ERMES 20.0.4 · September 2026</sub>
+<sub>ERMES 20.0.4 · October 2026</sub>
 </div>
