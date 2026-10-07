@@ -19,7 +19,7 @@
 [Features](#-features) •
 [Package contents](#-package-contents) •
 [Installation](#-installation) •
-[PETSc](#-ermespetsc-direct-interface) •
+[PETSc](#-ermespetsc-interface) •
 [Workflow](#-workflow) •
 [Gallery](#-gallery) •
 [Citation](#-citation) •
