@@ -258,8 +258,7 @@ GiD is recommended but not required. Any pre-processor can be used as long as it
 
 <p align="center">
   <img src="Images/GiD-GeoRender.png"/><br/>
-  <sub>ERMES GiD interface with CAD geometry of a coil and an asymmetrical conductive plate with a hole from the TEAM
-benchmark problem 7</sub>
+  <sub>ERMES GiD interface with CAD geometry of a coil and conductive plate (TEAM problem 7)</sub>
 </p>
 
 <p align="center">
