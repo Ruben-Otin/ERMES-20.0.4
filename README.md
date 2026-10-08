@@ -47,13 +47,17 @@ The graphical user interface is fully integrated into the pre/post-processor **[
 
 ### 🧮 FEM formulations
 
-| Formulation | Elements | A–φ potentials | Lagrange-multiplier stabilisation |
+**ERMES 20.0.4** solves the frequency-domain, full-wave Maxwell's equations with the Finite Element Method (FEM). Three formulations are available: the regularized Maxwell's equations with nodal elements, the double-curl Maxwell's equations with edge elements, and a local $L^2$ projection method with nodal and bubble elements. Each can be written in terms of the electric field $\mathbf{E}$ or in terms of the magnetic vector potential $\mathbf{A}$ together with the scalar electric potential $V$.
+
+The double-curl and local $L^2$ projection formulations can be stabilised with a Lagrange multiplier, which can be switched on or off. This matters most in the low-frequency and quasi-static regimes, where these formulations tend to become ill-conditioned. The regularized nodal formulation includes dedicated treatment of field discontinuities at material interfaces and of singularities at sharp edges and corners. 
+
+Having several formulations available means the most stable one can be chosen for each problem and produce the best-conditioned matrix, which can often be solved with low-memory iterative methods. 
+
+| Formulation | Elements | A–V potentials | Lagrange-multiplier stabilisation |
 |---|---|:---:|:---:|
 | Regularized Maxwell's equations | Nodal | ✅ | — |
 | Double-curl Maxwell's equations | Edge | ✅ | ✅ (switchable) |
-| Local L² projection method | Nodal + bubble | ✅ | ✅ (switchable) |
-
-Having several formulations lets you pick the most stable one for each problem and produce the best-conditioned matrix, which can often be solved with low-memory iterative methods. The regularized nodal formulation includes dedicated treatment of field **discontinuities** and **singularities**.
+| Local $L^2$ projection method | Nodal + bubble | ✅ | ✅ (switchable) |
 
 ### 🧱 Materials
 - **IHL materials** — isotropic, homogeneous, linear media
