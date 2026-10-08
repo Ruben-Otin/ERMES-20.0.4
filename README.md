@@ -47,7 +47,7 @@ The graphical user interface is fully integrated into the pre/post-processor **[
 
 ### 🧮 FEM formulations
 
-ERMES 20.0.4 solves the **frequency-domain, full-wave Maxwell's equations with the Finite Element Method (FEM)**. Three formulations are available: **the regularized Maxwell's equations with nodal elements, the double-curl Maxwell's equations with edge elements, and a local $L^2$ projection method with nodal and bubble elements**. Each can be written in terms of the electric field $\mathbf{E}$ or in terms of the magnetic vector potential $\mathbf{A}$ together with the scalar electric potential $V$.
+ERMES 20.0.4 solves the **frequency-domain, full-wave Maxwell's equations with the Finite Element Method (FEM)**. Three formulations are available: **the regularized Maxwell's equations with nodal elements, the double-curl Maxwell's equations with edge elements, and the local $L^2$ projection method with nodal and bubble elements**. Each can be solved in terms of the electric field **E** or in terms of the magnetic vector potential **A** together with the scalar electric potential V.
 
 The double-curl and local $L^2$ projection formulations can be **stabilised with a Lagrange multiplier**, which can be switched on or off. This matters most in the low-frequency and quasi-static regimes, where these formulations tend to become ill-conditioned. The regularized nodal formulation includes dedicated treatment of **field discontinuities** at material interfaces and of **singularities** at sharp edges and corners. 
 
