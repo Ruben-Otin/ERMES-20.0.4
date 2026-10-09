@@ -7,7 +7,7 @@
 *
 * E-mail: ruben.otin@ukaea.uk
 *
-* Oxford (UK) - September 2026
+* Oxford (UK) - October 2026
 ***************************************************************************************************
 
 This folder contains auxiliary scripts that complement ERMES 20.0.4. They help to automate
