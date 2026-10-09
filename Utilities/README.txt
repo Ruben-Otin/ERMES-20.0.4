@@ -19,14 +19,17 @@ boundary conditions, element matrices). It includes the following folders:
 - "Current_J_Scripts" : Generation of imported plasma current sources (J) from EQDSK files.
 - "IRBC_Scripts"      : Generation of plane wave Imported Robin Boundary Conditions (IRBC).
 - "IVEM_Scripts"      : Generation of imported element stiffness matrices (IVEM).
+- "Mesh_Refiner"      : Parallel uniform refinement of the ERMES mesh (.dat files) and run.
 - "NumPy_Solvers"     : Examples of Python NumPy/SciPy external solvers for ERMES.
 - "PETSc_Direct"      : Parallel C++ PETSc solver that reads the ERMES system files directly.
 - "Plasma_Scripts"    : EQDSK readers, cold plasma files generation and problem automation.
+- "Scotty_GiD"        : Scotty beam tracing / vacuum Gaussian beams exported as GiD geometry.
 
 All the scripts are examples intended to be copied and adapted to each specific problem.
 Paths, file names, problem names and physical parameters are defined at the beginning of
 each script and must be edited before use. Python scripts require Python 3 with NumPy and
-SciPy (and Matplotlib for "eqdsk_reader.py").
+SciPy (and Matplotlib for "eqdsk_reader.py" and the "Scotty_GiD" plots). The "Scotty_GiD"
+scripts that run beam tracing also require Scotty (https://github.com/beam-tracing/Scotty).
 
 ***************************************************************************************************
 1-) "Batch_Scripts"
@@ -104,7 +107,49 @@ folder from "Plasma_Scripts" or edit the "EQDSK_File" path.
                        matrix).
 
 ***************************************************************************************************
-5-) "NumPy_Solvers"
+5-) "Mesh_Refiner"
+***************************************************************************************************
+
+Uniform refinement of an ERMES mesh directly on the .dat files written by GiD, without
+re-meshing in GiD. It is useful to obtain very fine meshes (beyond what GiD can generate
+comfortably) or to run convergence studies on the same geometry.
+
+- "mesh_refiner.py" : Reads the nodes ("*-1.dat") and tetrahedra ("*-4.dat") of the problem,
+                      builds a conforming refined mesh and rewrites every mesh-dependent
+                      .dat file in the same format (nodal conditions "*-2.dat" and "*-3.dat",
+                      volume and current elements "*-4.dat" and "*-5.dat", boundary
+                      triangles "*-6.dat" to "*-8.dat", "*-10.dat" and "*-19.dat", prisms
+                      "*-9.dat"). Original nodes keep their numbers, child elements inherit
+                      the material, condition Id, etc. of their parent, and tetrahedra and
+                      triangles keep their orientation. The other .dat files (materials,
+                      plasma, frequency, solver...) are not modified. Two refinement modes:
+                        'levels' : each edge divided in L parts (tetrahedron -> L^3,
+                                   triangle -> L^2) without degrading the element quality.
+                        'ps'     : Powell-Sabin / Worsey-Farin split (tetrahedron -> 24,
+                                   triangle -> 6).
+                      Runs in parallel on Linux, WSL and Windows. Settings are defined in the
+                      USER SETTINGS block or on the command line, e.g.:
+                        >> python mesh_refiner.py ./MyProblem.gid --level 2 --np 16
+                        >> python mesh_refiner.py --help
+                      IMPORTANT: by default the files are refined IN PLACE and the refinement
+                      is NOT idempotent (running it twice refines the refined mesh). Let GiD
+                      rewrite the .dat files first, or use "--out <dir>" to keep the input.
+
+- "Refine2ERMES.sh" : Bash script (Linux or WSL) that runs the full pipeline inside the GiD
+                      problem folder: removes previous results, converts the .dat files to
+                      Unix line endings (dos2unix), refines the mesh with "mesh_refiner.py"
+                      and runs ERMES on the refined mesh (log in the ERMES "*.info" file).
+                      A stamp file (".refined_stamp") prevents refining the same mesh twice;
+                      the refinement is re-enabled every time GiD rewrites the .dat files.
+                      Problem name/folder, refiner and ERMES paths, mode, level, number of
+                      processes and FORCE_REFINE (0 = auto, 1 = always, 2 = ERMES only) are
+                      set at the top, or as arguments / environment variables, e.g.:
+                        >> ./Refine2ERMES.sh MyProblem 3
+                        >> LEVEL=4 NPROC=8 ./Refine2ERMES.sh
+                        >> ./Refine2ERMES.sh -h
+
+***************************************************************************************************
+6-) "NumPy_Solvers"
 ***************************************************************************************************
 
 Examples of Python scripts used as external solvers of ERMES. They read the matrix and
@@ -120,7 +165,7 @@ the lower diagonal.
 - "SuperLU.py" : Direct sparse LU solver (SuperLU).
 
 ***************************************************************************************************
-6-) "PETSc_Direct"
+7-) "PETSc_Direct"
 ***************************************************************************************************
 
 Direct interface between ERMES and PETSc. The C++ solver "ERMESPETScSolver" reads the ERMES
@@ -156,7 +201,7 @@ and double precision.
                            compilation, use from ERMES, and solver options.
 
 ***************************************************************************************************
-7-) "Plasma_Scripts"
+8-) "Plasma_Scripts"
 ***************************************************************************************************
 
 Scripts for tokamak plasma problems (e.g. electron cyclotron waves in MAST-U).
@@ -189,6 +234,44 @@ Scripts for tokamak plasma problems (e.g. electron cyclotron waves in MAST-U).
                                   - "rho_ne.txt"          : Normalized electron density profile
                                   - "rho_te.txt"          : Normalized electron temperature profile
                                   - "rho_flux.txt"        : Normalized flux coordinate
+
+***************************************************************************************************
+9-) "Scotty_GiD"
+***************************************************************************************************
+
+Scripts that compute the path and shape of an electron cyclotron Gaussian beam and export it
+as geometry that GiD can import (STL triangle mesh and/or exact NURBS surfaces in IGES). The
+beam geometry can then be used to build and refine the ERMES model around the beam (e.g. the
+MAST-U Doppler back-scattering launch). The beam envelope is the 1/e amplitude contour of the
+beam. Parameters are set in the "USER PARAMETERS" block of each script, or on the command line
+with "--name value" ("--show-params" and "--help" list them).
+
+- "eqdsk_to_scotty.py" : Converts an EQDSK equilibrium file plus electron density and
+                         temperature profiles into the input files of the Scotty beam tracer
+                         ("topfile<sfx>", "ne<sfx>.dat", "Te<sfx>.dat" and, optionally,
+                         "topfile<sfx>.json"). It also indicates the Scotty options to use
+                         with these files (find_B_method, density_fit_method, etc.).
+
+- "scotty_to_gid.py"   : Runs a Scotty beam tracing simulation (or reads an existing
+                         "scotty_output*.h5" file) and writes the beam envelope as STL and/or
+                         NURBS (IGES). The beam can be extended through vacuum beyond its first
+                         and last points. It can also write an "FEM envelope": a closed
+                         polyhedron with planar faces enclosing the beam at a given distance,
+                         to be used as the ERMES computational volume. Text files with the
+                         central ray, the E-field and wave vector k along the ray and at both
+                         ends, and a summary of the beam parameters are written too.
+
+- "beam_to_gid.py"     : Same outputs as "scotty_to_gid.py" for a Gaussian beam propagating
+                         in vacuum, without Scotty and without plasma. The user defines the
+                         frequency, start point, direction (vector or poloidal/toroidal
+                         angles), beam profile (waist or launch width and curvature, also
+                         elliptical/astigmatic beams), polarization and propagation length.
+
+- "Plasma"             : Sample input data for "eqdsk_to_scotty.py":
+                         - "mast-u-sample.eqdsk" : MAST-U EQDSK equilibrium file
+                         - "flux_sample.dat"     : Normalized flux coordinate
+                         - "ne_sample.dat"       : Electron density profile [m^-3]
+                         - "te_sample.dat"       : Electron temperature profile [eV]
 
 ***************************************************************************************************
 
