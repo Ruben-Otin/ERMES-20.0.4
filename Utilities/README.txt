@@ -21,7 +21,7 @@ boundary conditions, element matrices). It includes the following folders:
 - "IVEM_Scripts"      : Generation of imported element stiffness matrices (IVEM).
 - "Mesh_Refiner"      : Parallel uniform refinement of the ERMES mesh (.dat files) and run.
 - "NumPy_Solvers"     : Examples of Python NumPy/SciPy external solvers for ERMES.
-- "PETSc_Direct"      : Parallel C++ PETSc solver that reads the ERMES system files directly.
+- "PETSc_Solvers"     : Parallel C++ PETSc solver that reads the ERMES system files directly.
 - "Plasma_Scripts"    : EQDSK readers, cold plasma files generation and problem automation.
 - "Scotty_GiD"        : Scotty beam tracing / vacuum Gaussian beams exported as GiD geometry.
 
@@ -165,7 +165,7 @@ the lower diagonal.
 - "SuperLU.py" : Direct sparse LU solver (SuperLU).
 
 ***************************************************************************************************
-7-) "PETSc_Direct"
+7-) "PETSc_Solvers"
 ***************************************************************************************************
 
 Direct interface between ERMES and PETSc. The C++ solver "ERMESPETScSolver" reads the ERMES
@@ -188,8 +188,8 @@ and double precision.
                            PETSC_DIR and PETSC_ARCH (">> make ERMESPETScSolver").
 
 - "ERMES2PETSc.sh"       : Script called by ERMES as external solver, on Linux
-                           ("bash /path_to/PETSc_Direct/ERMES2PETSc.sh") and on Windows
-                           through WSL ("wsl bash /path_to/PETSc_Direct/ERMES2PETSc.sh").
+                           ("bash /path_to/PETSc_Solvers/ERMES2PETSc.sh") and on Windows
+                           through WSL ("wsl bash /path_to/PETSc_Solvers/ERMES2PETSc.sh").
                            The PETSc configuration, solver type and options, number of MPI
                            processes, optional hybrid MPI+OpenMP and MPI launcher are set at
                            the top. Inside a SLURM job it uses all the nodes and tasks of the
