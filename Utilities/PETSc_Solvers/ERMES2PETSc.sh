@@ -9,8 +9,8 @@
 #  Usage from ERMES:
 #    1) Select "External solver" on ERMES "Solver type".
 #    2) Type on ERMES "External solvers settings":
-#       >> bash     /path_to/PETSc_Direct/ERMES2PETSc.sh (Linux)
-#       >> wsl bash /path_to/PETSc_Direct/ERMES2PETSc.sh (Windows)
+#       >> bash     /path_to/PETSc_Solvers/ERMES2PETSc.sh (Linux)
+#       >> wsl bash /path_to/PETSc_Solvers/ERMES2PETSc.sh (Windows)
 #
 #  ERMES runs this script from the problem folder. The matrix format (Symmetric, Full-matrix,
 #  Hermitic-Symmetric or Hermitic-Full) is detected automatically. Inside a SLURM job, the solver
