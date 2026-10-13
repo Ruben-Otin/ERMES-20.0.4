@@ -281,5 +281,4 @@ ERMES2PETSc.sh already handles this, always calling PETSc's mpiexec by its full 
     >> cd $PETSC_DIR/src/snes/tutorials && make ex19
     >> $PETSC_DIR/$PETSC_ARCH/bin/mpiexec -n 4 ./ex19
 
-For more information, see the PETSc manual on "/External_Solvers/PETSc" or visit 
-https://petsc.org.
+For more information, visit the PETSc website at https://petsc.org.
