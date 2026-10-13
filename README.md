@@ -135,7 +135,7 @@ Download the latest GiD from [gidsimulation.com](https://www.gidsimulation.com),
 Copy the entire `ERMES_20.0.4` folder into GiD's `problemtypes` directory (e.g. C:\MySoftware\GiD 16.0.2\problemtypes). Then, restart GiD and select **Data → Problem type → ERMES_20.0.4 → ERMES**. The ERMES logo and menu bar should appear. The same procedure applies to Windows and Linux.
 
 ### 3. Install PETSc
-For high-performance computing and large problems, use the ERMES–PETSc interface in `Utilities/PETSc_Direct`. See installation details in **[ERMES–PETSc interface](#petsc)** below.
+For high-performance computing and large problems, use the ERMES–PETSc interface in `Utilities/PETSc_Solvers`. See installation details in **[ERMES–PETSc interface](#petsc)** below.
 
 ---
 
@@ -145,7 +145,7 @@ For high-performance computing and large problems, use the ERMES–PETSc interfa
 
 `ERMESPETScSolver` reads the ERMES linear system **A X₀ = B** directly and in parallel, solves it with **[PETSc](https://petsc.org)**, and writes the solution `Vector_Xo.bin` back for ERMES. **No Python and no intermediate files** are needed.
 
-📁 Source: [`Utilities/PETSc_Direct`](https://github.com/Ruben-Otin/ERMES-20.0.4/tree/main/Utilities/PETSc_Direct)
+📁 Source: [`Utilities/PETSc_Solvers`](https://github.com/Ruben-Otin/ERMES-20.0.4/tree/main/Utilities/PETSc_Solvers)
 
 | File | Purpose |
 |---|---|
@@ -195,7 +195,7 @@ cd $PETSC_DIR
   --download-cmake --download-bison --download-make
 #    ...then run the "make" commands printed at the end of configure
 
-# 4. Compile the solver (inside Utilities/PETSc_Direct)
+# 4. Compile the solver (inside Utilities/PETSc_Solvers)
 make ERMESPETScSolver
 
 # 5. Execution permissions
@@ -208,8 +208,8 @@ In ERMES, set **Solver type** to **External solver** and enter in **External sol
 
 | OS | Command |
 |---|---|
-| 🐧 Linux | `bash /path_to/PETSc_Direct/ERMES2PETSc.sh` |
-| 🪟 Windows | `wsl bash /path_to/PETSc_Direct/ERMES2PETSc.sh` |
+| 🐧 Linux | `bash /path_to/PETSc_Solvers/ERMES2PETSc.sh` |
+| 🪟 Windows | `wsl bash /path_to/PETSc_Solvers/ERMES2PETSc.sh` |
 
 ERMES runs the script from the problem folder. Inside a **SLURM** job, the solver runs on all the nodes and tasks of the job. All solver output, including errors, goes to the ERMES `*.info` file.
 
@@ -217,10 +217,10 @@ The script can also be run without ERMES, from a folder that contains the matrix
 
 ```bash
 cd /path_to/problem_folder
-bash /path_to/PETSc_Direct/ERMES2PETSc.sh
+bash /path_to/PETSc_Solvers/ERMES2PETSc.sh
 ```
 
-For more information, see README.txt in `Utilities/PETSc_Direct` or visit [petsc.org](https://petsc.org).
+For more information, see README.txt in `Utilities/PETSc_Solvers` or visit [petsc.org](https://petsc.org).
 
 ---
 
@@ -237,7 +237,7 @@ flowchart TB
         A["#nbsp;#nbsp;#nbsp;Create / import geometry#nbsp;#nbsp;#nbsp;"] --> B[Assign materials & BCs]
         B --> C[Set problem parameters]
         C --> D[Mesh]
-        D --> E[Calculate]
+        D --> E[Write .dat files]
     end
     subgraph SOLVE["⚙️ ERMES"]
         direction TB
