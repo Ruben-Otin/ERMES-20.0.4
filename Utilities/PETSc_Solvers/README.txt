@@ -85,8 +85,8 @@ FILES:
 
 Select "External solver" on "Solver type" and type on "External solvers settings":
 
-- Linux  : bash     /path_to/PETSc_Direct/ERMES2PETSc.sh
-- Windows: wsl bash /path_to/PETSc_Direct/ERMES2PETSc.sh
+- Linux  : bash     /path_to/PETSc_Solvers/ERMES2PETSc.sh
+- Windows: wsl bash /path_to/PETSc_Solvers/ERMES2PETSc.sh
 
 ERMES runs the script from the problem folder. Inside a SLURM job, the solver runs
 on all the nodes and tasks of the job. All the solver output, including errors, is
@@ -96,7 +96,7 @@ The script can also be run directly (without ERMES) from a folder containing the
 ERMES matrix and vector files:
 
 >> cd /path_to/problem_folder
->> bash /path_to/PETSc_Direct/ERMES2PETSc.sh
+>> bash /path_to/PETSc_Solvers/ERMES2PETSc.sh
 
 ====================================================================================
 = SCRIPT SETTINGS (ERMES2PETSc.sh)
