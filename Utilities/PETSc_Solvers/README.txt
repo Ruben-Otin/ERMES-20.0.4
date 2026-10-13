@@ -1,5 +1,5 @@
 ************************************************************************************
-* ERMES 20.0 - ERMES-PETSc direct interface
+* ERMES 20.0.4 - ERMES-PETSc interface
 ************************************************************************************
 
 ERMESPETScSolver reads the ERMES linear system A Xo = B directly and in parallel,
